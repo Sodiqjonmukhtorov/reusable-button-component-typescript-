@@ -6,24 +6,24 @@ function Layout() {
     <>
       <div>
         <Drawer />
-        <div className="lg:ml-72 ml-0  flex-col flex items-center  lg:items-start lg:justify-start mx-auto relative ">
-          <h1 className="my-9 text-5xl font-semibold">
+        <div className="relative flex flex-col items-center mx-auto ml-0 lg:ml-72 lg:items-start lg:justify-start ">
+          <h1 className="text-5xl font-semibold my-9">
             {path ? path : "Home"}
           </h1>
           <div>
             <Outlet />
           </div>
           <div className="relative">
-            <p className="text-slate-500   bottom--3 mt-16">
+            <p className="mt-16 text-slate-500 bottom--3">
               created by{" "}
               <a
-                className="underline font-semibold"
-                href="https://github.com/lil-bee"
+                className="font-semibold underline"
+                href="https://github.com/Sodiqjonmukhtorov"
                 target="_blank"
               >
-                lilbee
+                Sodiqjon Mukhtorov
               </a>{" "}
-              - devChallenges.io
+              youutube.uz
             </p>
           </div>
         </div>

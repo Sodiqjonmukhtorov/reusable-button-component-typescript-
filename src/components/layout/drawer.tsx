@@ -4,31 +4,24 @@ import { useState, useEffect } from "react";
 function Drawer() {
   const [isDrawerOpen, setDrawerOpen] = useState(true);
   let path = location.pathname;
-  //choose the screen size
 
   const toggleDrawer = () => {
     setDrawerOpen(!isDrawerOpen);
   };
 
   useEffect(() => {
-    // Callback untuk dijalankan saat ukuran layar berubah
     const handleResize = () => {
-      // Jika ukuran layar lebih besar dari batas tertentu, buka drawer
       if (window.innerWidth >= 768) {
         setDrawerOpen(true);
       } else {
-        // Jika ukuran layar kurang dari batas tertentu, tutup drawer
         setDrawerOpen(false);
       }
     };
 
-    // Tambahkan event listener untuk mengikuti perubahan ukuran layar
     window.addEventListener("resize", handleResize);
 
-    // Panggil handleResize untuk menetapkan nilai awal
     handleResize();
 
-    // Bersihkan event listener saat komponen dibongkar
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -36,7 +29,6 @@ function Drawer() {
 
   return (
     <>
-      {/* Tombol untuk membuka dan menutup drawer pada layar kecil */}
       <div
         className={`flex items-center px-3 py-6 justify-between lg:hidden ${
           isDrawerOpen ? "hidden" : "block"
@@ -46,7 +38,6 @@ function Drawer() {
           id="drawer-navigation-label"
           className="text-base font-semibold text-gray-900"
         >
-          <span className="text-orange-600">Dev</span>challenges.io
         </h5>
         <button className="" type="button" onClick={toggleDrawer}>
           <svg
@@ -66,7 +57,6 @@ function Drawer() {
         </button>
       </div>
 
-      {/* Drawer Navigation */}
       <div
         id="drawer-navigation"
         className={`fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform bg-white w-60 dark:bg-gray-800 rounded-e-3xl lg:block ${
@@ -76,7 +66,6 @@ function Drawer() {
         }`}
         aria-labelledby="drawer-navigation-label"
       >
-        {/* Tombol untuk menutup drawer pada layar kecil */}
         <button
           type="button"
           onClick={toggleDrawer}
@@ -105,7 +94,7 @@ function Drawer() {
             id="drawer-navigation-label"
             className="text-base font-semibold text-gray-400"
           >
-            <span className="text-orange-400">Dev</span>challenges.io
+            <span className="text-orange-400">Dev</span>SM
           </h5>
         </Link>
         <div className="py-4 overflow-y-auto">
@@ -137,7 +126,7 @@ function Drawer() {
             </li>
             <li className={path == "/input" ? "bg-gray-700 rounded-lg" : ""}>
               <Link
-                className="flex focus:bg-gray-700 items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                className="flex items-center p-2 text-gray-900 rounded-lg focus:bg-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                 to="/input"
               >
                 <svg
